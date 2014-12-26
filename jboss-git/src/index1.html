@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="utf-8"/>
+		
+		<style type="text/css">
+		h1{
+			font-family: sans-serif;
+			color: red;
+		}		
+		section h1{
+			color: blue;
+		}		
+		section section h1{
+			color: green;
+		}		
+		footer#footerDeConteudo{
+			display: block;
+			border: 1px solid gray;
+			padding: 5px;
+		}
+		.btnConfirma{
+			border: 1px solid green;
+			background-color:green;
+			padding:5px;
+			margin:5px;			
+		}
+		.btnCancela{
+			border: 1px solid orange;
+			background-color:orange;
+			padding:5px;
+			margin:5px;
+		}
+		</style>
+	</head>
+
+<body>
+	<header>
+		<h1>Primeiro HTML</h1>
+	</header>
+	
+	<section>
+		<header>		
+			Outro header
+				<h1>
+					outro h1 Azul
+				</h1>
+		</header>
+	
+		<section>
+			
+				<h1>
+					outro h1 Verde
+				</h1>
+				Conteúdo da section
+				<br>
+				<input type="button" value="Salvar" class="btnConfirma">
+				<input type="button" value="Cancelar" class="btnCancela">
+		</section>
+	
+	</section>
+	<footer id="footerDeConteudo">
+		Todos os direitos reservados.
+	</footer>
+	
+	<script>
+		var header = document.querySelectorAll('header');		
+		header[0].innerHTML='<h3>Deu Certo?</h3>';		
+		console.log(header);
+		
+		var btnSalvar = document.querySelector('section input.btnConfirma');
+		btnSalvar.value='Novo texto salvar';
+		btnSalvar.title='Clique para Salvar';
+		
+		function deuCerto(){
+			alert('Deu certo!')
+		}
+		btnSalvar.addEventListener('click',deuCerto);
+		
+	</script>
+</body>
+
+
+
+
+</html>

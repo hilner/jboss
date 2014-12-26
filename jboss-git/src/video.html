@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <style type="text/css" media="screen">        	                                                                 	
+        	
+        </style>
+        
+        
+        
+    </head>
+    
+    <body>
+	
+		<video controls width="400" loop>
+			<source src="media/developerStories-en.webm" type="video/webm">
+			<source src="media/developerStories-en.mp4" type="video/mp4">
+		</video>
+    	    	    	
+		<input type="button"value="play" id="playBtn">				
+		<input type="button"value="pause" id="pauseBtn">				
+		
+    	<script>
+
+		var video = document.querySelector('video');
+		var playBtn = document.querySelector('#playBtn');
+		var pauseBtn = document.querySelector('#pauseBtn');
+		
+		function playVideo(){
+			video.play();
+		}
+		
+		function pauseVideo(){
+			video.pause();
+		}
+				
+		playBtn.addEventListener('click', playVideo);
+		pauseBtn.addEventListener('click', pauseVideo);
+            
+        </script>
+    </body>
+
+</html>

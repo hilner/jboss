@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html lang="pt-BR">
+
+    <head>
+	<title>Formulario</title>
+        <meta charset="utf-8" />
+		<style type="text/css">
+		
+		</style>
+	</head>
+	
+	<body>
+	<label>Nome:</label><br>
+	<input type="text" id="nome">
+	<br><br>
+	
+	<label>Telefone:</label><br>
+	<input type="text" id="telefone">
+	<br><br>
+	
+	<label>Idade:</label><br>
+	<input type="number" id="idade">
+	<br><br>
+	
+	<input type="button" value="Salvar" id="btnSalvar">
+	<input type="button" value="Carregar" id="btnCarregar">
+	<input type="button" value="Deletar" id="btnDeletar">
+	
+	<script>
+	var nome = document.querySelector('#nome');
+	var telefone = document.querySelector('#telefone');
+	var idade = document.querySelector('#idade');
+	var btnSalvar = document.querySelector('#btnSalvar');
+	var btnCarregar = document.querySelector('#btnCarregar');
+	var btnDeletar = document.querySelector('#btnDeletar');
+		
+	function deletar(){		
+		delete localStorage.myForm;
+	}	
+	
+	btnDeletar.addEventListener('click',deletar);
+		
+	function salvarFormulario(){
+		var form = {
+			nome: nome.value,
+			telefone: telefone.value,
+			idade: idade.value
+		}
+		localStorage.myForm = JSON.stringify(form);			
+	}
+	
+	btnSalvar.addEventListener('click', salvarFormulario);
+		
+	function carregarFormulario(){
+		if(localStorage.myForm){			
+			var form = JSON.parse(localStorage.myForm);
+			nome.value=form.nome;
+			telefone.value=form.telefone;
+			idade.value=form.idade;
+		}		
+	}
+	
+	btnCarregar.addEventListener('click',carregarFormulario);
+	</script>
+	</body>
+</html>	
